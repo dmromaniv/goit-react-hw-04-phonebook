@@ -20,7 +20,6 @@ export const App = () => {
 
   const addNewContact = useCallback(
     newContact => {
-      console.log(newContact);
       const contactExists = contacts.find(
         contact => contact.name.toUpperCase() === newContact.name.toUpperCase()
       );
