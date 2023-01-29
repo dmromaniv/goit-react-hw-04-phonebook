@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'contacts';
 
-export function getDataFromLocalStorage() {
+export function getContactsFromLocalStorage() {
   try {
     const serializedData = localStorage.getItem(STORAGE_KEY);
     return serializedData ? JSON.parse(serializedData) : [];
@@ -9,7 +9,7 @@ export function getDataFromLocalStorage() {
   }
 }
 
-export function setDataToLocalStorage(newData) {
+export function setContactsToLocalStorage(newData) {
   try {
     const serializedData = JSON.stringify(newData);
     localStorage.setItem(STORAGE_KEY, serializedData);

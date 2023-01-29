@@ -1,21 +1,17 @@
 import PropTypes from 'prop-types';
 
-import { Component } from 'react';
-
-export class Filter extends Component {
-  handleOnChange = event => {
-    this.props.setContactFilter(event.target.value);
+export const Filter = ({ setContactFilter }) => {
+  const handleOnChange = event => {
+    setContactFilter(event.target.value);
   };
 
-  render() {
-    return (
-      <>
-        <p>Find contacts by name</p>
-        <input type="text" name="filter" onChange={this.handleOnChange}></input>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <p>Find contacts by name</p>
+      <input type="text" name="filter" onChange={handleOnChange}></input>
+    </>
+  );
+};
 
 Filter.propTypes = {
   setContactFilter: PropTypes.func.isRequired,
